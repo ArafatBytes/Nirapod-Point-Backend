@@ -28,8 +28,8 @@ WORKDIR /app
 # Copy the built jar from the build stage
 COPY --from=0 /app/target/*.jar app.jar
 
-# Expose port 8080
-EXPOSE 8080
+# Expose both ports that Render might use
+EXPOSE 8080 10000
 
-# Set the entry point
-ENTRYPOINT ["java", "-jar", "app.jar"] 
+# Set the entry point with dynamic port configuration
+ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT:-8080}"] 
