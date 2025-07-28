@@ -32,6 +32,7 @@ public class SecurityConfig {
             .and()
             .authorizeHttpRequests()
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/api/routes/debug-crime-check").permitAll()
                 .requestMatchers("/actuator/**").permitAll()
                 .requestMatchers("/health").permitAll()
