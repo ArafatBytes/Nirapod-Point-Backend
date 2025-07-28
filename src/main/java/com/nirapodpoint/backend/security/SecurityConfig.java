@@ -29,6 +29,9 @@ public class SecurityConfig {
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/routes/debug-crime-check").permitAll()
                 .requestMatchers("/actuator/**").permitAll()
+                .requestMatchers("/health").permitAll()
+                .requestMatchers("/test").permitAll()
+                .requestMatchers("/").permitAll()
                 .anyRequest().authenticated()
             .and()
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

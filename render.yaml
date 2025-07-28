@@ -4,7 +4,7 @@ services:
     env: docker
     region: oregon
     plan: starter
-    healthCheckPath: /health
+    healthCheckPath: /actuator/health
     envVars:
       - key: SPRING_DATA_MONGODB_URI
         value: mongodb+srv://mdarafat1661:8EXsGGrmqMFZQe27@nirapodpoint.t3aunut.mongodb.net/?retryWrites=true&w=majority&appName=NirapodPoint
