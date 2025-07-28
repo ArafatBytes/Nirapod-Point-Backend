@@ -4,7 +4,7 @@ services:
     env: docker
     region: oregon
     plan: starter
-    healthCheckPath: /actuator/health
+    healthCheckPath: /health
     envVars:
       - key: SPRING_DATA_MONGODB_URI
         value: mongodb+srv://mdarafat1661:8EXsGGrmqMFZQe27@nirapodpoint.t3aunut.mongodb.net/?retryWrites=true&w=majority&appName=NirapodPoint
@@ -12,3 +12,5 @@ services:
         value: hello3210bye@gmail.com
       - key: SPRING_MAIL_PASSWORD
         value: zqap tdkc wjbd ilyx
+    buildCommand: ""
+    startCommand: ""
