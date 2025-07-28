@@ -1,25 +1,23 @@
 # Use Eclipse Temurin Java 17 as base image
 FROM eclipse-temurin:17-jdk-alpine
 
+# Install Maven
+RUN apk add --no-cache maven
+
 # Set working directory
 WORKDIR /app
 
-# Copy Maven wrapper and pom.xml
-COPY mvnw .
-COPY .mvn .mvn
+# Copy pom.xml first for better caching
 COPY pom.xml .
 
-# Make mvnw executable
-RUN chmod +x mvnw
-
 # Download dependencies
-RUN ./mvnw dependency:go-offline -B
+RUN mvn dependency:go-offline -B
 
 # Copy source code
 COPY src src
 
 # Build the application
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # Create a new stage for runtime
 FROM eclipse-temurin:17-jre-alpine
