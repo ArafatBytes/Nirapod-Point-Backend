@@ -24,7 +24,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"https://nirapod-point.vercel.app", "http://localhost:3000", "http://localhost:5173"})
 public class UserController {
     @Autowired
     private UserRepository userRepository;

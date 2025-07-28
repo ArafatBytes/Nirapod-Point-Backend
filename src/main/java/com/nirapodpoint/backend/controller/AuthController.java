@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"https://nirapod-point.vercel.app", "http://localhost:3000", "http://localhost:5173"})
 public class AuthController {
     @Autowired
     private UserService userService;

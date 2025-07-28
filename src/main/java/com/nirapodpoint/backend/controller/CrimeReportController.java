@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/crimes")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"https://nirapod-point.vercel.app", "http://localhost:3000", "http://localhost:5173"})
 public class CrimeReportController {
     @Autowired
     private CrimeReportService crimeReportService;

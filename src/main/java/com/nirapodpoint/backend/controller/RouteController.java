@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/routes")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"https://nirapod-point.vercel.app", "http://localhost:3000", "http://localhost:5173"})
 public class RouteController {
     @Autowired
     private RouteService routeService;
